@@ -8,6 +8,15 @@ class Paddle extends Sprite {
     document.addEventListener("keyup", this.keyUpHandler.bind(this));
   }
 
+  move(canvasWidth) {
+    super.move();
+    if (this.x < 0) {
+      this.x = 0;
+    } else if (this.x + this.width > canvasWidth) {
+      this.x = canvasWidth - this.width;
+    }
+  }
+  
   keyDownHandler(e) {
     if (e.key === "Right" || e.key === "ArrowRight") {
       this.dx = this.displacement;
