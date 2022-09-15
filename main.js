@@ -31,6 +31,7 @@ function draw() {
   ball.bounce(canvas.width, canvas.height);
   paddle.draw(ctx);
   paddle.move(canvas.width);
+  ball.colides(paddle);
 
   window.requestAnimationFrame(draw);
 }

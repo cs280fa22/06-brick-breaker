@@ -12,6 +12,12 @@ class Ball extends Sprite {
       this.dy *= -1; // switch direction
     }
   }
+
+  colides(paddle) {
+    if (this.intersects(paddle)) {
+      this.dy *= -1; // switch direction
+    }
+  }
 }
 
 export default Ball;
