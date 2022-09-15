@@ -63,7 +63,11 @@ function draw() {
   ctx.fillText("Score: " + score, 8, 20);
 
   if (!isGameOver) {
-    window.requestAnimationFrame(draw);
+    if (score == brickRowCount * brickColumnCount) {
+      window.alert("You won!");
+    } else {
+      window.requestAnimationFrame(draw);
+    }
   } else {
     window.alert("Game over!");
   }
